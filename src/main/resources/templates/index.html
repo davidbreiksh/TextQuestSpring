@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Adventure Game</title>
+</head>
+<body>
+<h1>Text Adventure Game</h1>
+<p th:text="${questionText}"></p>
+<form method="get" action="/">
+    <input type="hidden" name="questionId" th:value="${questionId}">
+    <ul>
+        <li th:each="answer : ${answers}">
+            <label>
+                <input type="radio" name="answerId" th:value="${answer.id}">
+                <span th:text="${answer.text}"></span>
+            </label>
+        </li>
+    </ul>
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>
