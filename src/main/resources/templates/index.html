@@ -7,12 +7,12 @@
 <body>
 <h1>Text Adventure Game</h1>
 <p th:text="${questionText}"></p>
-<form method="get" action="/">
+<form method="get" action="/play/answer">
     <input type="hidden" name="questionId" th:value="${questionId}">
     <ul>
         <li th:each="answer : ${answers}">
             <label>
-                <input type="radio" name="answerId" th:value="${answer.id}">
+                <input type="radio" name="choice" th:value="${answer.text}">
                 <span th:text="${answer.text}"></span>
             </label>
         </li>
